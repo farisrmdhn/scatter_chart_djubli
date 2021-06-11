@@ -28,8 +28,8 @@ class _MainScreenState extends State<MainScreen> {
   Widget currentPage;
 
   // Custom Car Type Selector
-  static TextStyle selectedNavStyle = TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.pinkAccent);
-  static TextStyle defaultNavStyle = TextStyle(fontSize: 24);
+  static TextStyle selectedNavStyle = TextStyle(fontSize: 20, color: Colors.pinkAccent);
+  static TextStyle defaultNavStyle = TextStyle(fontSize: 20, color: Colors.grey[500]);
   TextStyle mpvNavStyle = selectedNavStyle;
   TextStyle sedanNavStyle = defaultNavStyle;
   TextStyle suvNavStyle = defaultNavStyle;
@@ -54,32 +54,96 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: Material(
+          elevation: 2,
+          child: Padding(
+            padding: EdgeInsets.only(left: 16, right: 16, top: 32, bottom: 16),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+
+                Icon(
+                  Icons.menu,
+                  color: Color(0xFFFF5A5F),
+                ),
+
+                Container(
+                  child: Text(
+                    "djubli",
+                    style: TextStyle(
+                      fontSize: 36,
+                      color: Color(0xFFFF5A5F)
+                    ),
+                  )
+                ),
+
+                Stack(
+                  children: <Widget>[
+                    Icon(
+                      Icons.notifications_none,
+                      color: Colors.grey[400],
+                    ),
+                    Positioned(
+                      top: 0.0,
+                      right: 0.0,
+                      child: Icon(
+                        Icons.brightness_1, 
+                        size: 8.0, 
+                        color: Color(0xFFFF5A5F),
+                      ),
+                    ),
+                  ]
+                ),
+
+              ],
+            ),
+          ),
+        ),
+      ),
+
       body: _buildBody(),
     );
   }
 
   Widget _buildSearchField() {
-    return Container(
-      width: 275,
-      padding: EdgeInsets.only(top: 5, bottom: 5, left: 5, right: 2.5),
-      child: TextField(
-        autocorrect: true,
-        decoration: InputDecoration(
-          hintText: 'Cari Mobil Impianmu!',
-          prefixIcon: Icon(Icons.search, color: Colors.pinkAccent,),
-          hintStyle: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 18),
-          filled: true,
-          fillColor: Colors.white70,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(110)),
-            borderSide: BorderSide(color: Colors.grey, width: 2),
-            ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(110)),
-            borderSide: BorderSide(color: Colors.pinkAccent, width: 3),
+    return TextField(
+      decoration: InputDecoration(
+        hintText: 'Temukan Mobil Impianmu!',
+        hintStyle: TextStyle(
+          fontSize: 18,
+          color: Colors.grey[500],
+          fontWeight: FontWeight.bold,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(50),
+          borderSide: BorderSide(
+            width: 0, 
+            style: BorderStyle.none,
           ),
         ),
-      )
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(50),
+          borderSide: BorderSide(
+            width: 2.5, 
+            style: BorderStyle.solid,
+            color: Color(0xFFFF5A5F)
+          ),
+        ),
+        filled: true,
+        fillColor: Colors.grey[250],
+        contentPadding: EdgeInsets.all(20),
+        prefixIcon: Padding(
+          padding: EdgeInsets.only(left: 16.0, right: 8.0),
+          child: Icon(
+            Icons.search,
+            color: Colors.grey[500],
+            size: 28,
+          ),
+        ),
+      ),
     );
     
   }
@@ -98,7 +162,7 @@ class _MainScreenState extends State<MainScreen> {
                     });
                   },
                   child: Padding(
-                    padding: EdgeInsets.only(right: 10),
+                    padding: EdgeInsets.all(5),
                     child: Text(
                       'MPV',
                       style: mpvNavStyle,
@@ -148,32 +212,13 @@ class _MainScreenState extends State<MainScreen> {
 
   Widget _buildBody() {
     return Container(
-      padding: EdgeInsets.only(top: 35),
       child: Column(
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.pinkAccent,
-            ),
-            child: Row(
-              children: <Widget>[
-                SizedBox(width: 10),
-                Text(
-                  'DjuBli',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold
-                  ),
-                ),
-                Spacer(),   
-                _buildSearchField(),
-              ],
-            ),
-          ),
-          SizedBox(height: 25),
-          _buildTypeSelector(),
           SizedBox(height: 10),
+          _buildSearchField(),
+          SizedBox(height: 10),
+          _buildTypeSelector(),
+          SizedBox(height: 5),
           currentPage,
         ],
       ),

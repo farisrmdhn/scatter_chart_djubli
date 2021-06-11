@@ -11,7 +11,9 @@ class ScatterChartDjubliApp extends StatelessWidget {
       title: 'Djubli',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.blue,
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'Poppins'
       ),
       home: MainScreen(),
     );
