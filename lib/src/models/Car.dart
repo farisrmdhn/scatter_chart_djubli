@@ -6,6 +6,7 @@ class Car {
   final String color;
   final String mileage;
   final String location;
+  final String desc;
 
   Car ({
     this.id,
@@ -14,7 +15,8 @@ class Car {
     this.transactionDate,
     this.color,
     this.mileage,
-    this.location
+    this.location,
+    this.desc
   });
 
 }

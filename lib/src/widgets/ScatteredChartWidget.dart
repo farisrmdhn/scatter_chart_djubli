@@ -14,6 +14,9 @@ import '../models/Cars.dart';
 // External Widgets
 import '../widgets/CarTile.dart';
 
+// Screens
+import '../screens/DetailsScreen.dart';
+
 class ScatteredChartWidget extends StatefulWidget {
 
   @override
@@ -61,7 +64,7 @@ class _ScatteredChartWidgetState extends State<ScatteredChartWidget> {
           Container(
             padding: EdgeInsets.all(5),
             width: 450,
-            height: 260,
+            height: 210,
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black, width: 2.5),
               borderRadius: BorderRadius.circular(15),
@@ -87,9 +90,22 @@ class _ScatteredChartWidgetState extends State<ScatteredChartWidget> {
                     nameGap: 30
                   },
                   series: [{
-                      color : ['#ff4081'],
                       symbolSize: 15,
-                      type: 'scatter'
+                      type: 'scatter',
+                      itemStyle: {
+                          color: ['#ff4081'],
+                          shadowColor: 'rgba(0, 0, 0, 0.5)',
+                          shadowBlur: 3
+                      },
+                      selectedMode: true,
+                      select: {
+                        itemStyle: {
+                          color: '#ebc634',
+                          shadowColor: 'rgba(0, 0, 0, 0.5)',
+                          shadowBlur: 3,
+                          borderWidth: 0,
+                        },  
+                      },
                   }]
               }
               ''',
@@ -163,9 +179,9 @@ class _ScatteredChartWidgetState extends State<ScatteredChartWidget> {
         maxItemCount: cars.length - 1,
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
-            // ,onTap: () {
-            //   Navigator.pushNamed(context, '/details', arguments: model.detectors[index].id);
-            // }
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsScreen(id: cars[index].id)));
+            },
             child: CarTile(
               name: cars[index].name,
               price: cars[index].price.toString(),

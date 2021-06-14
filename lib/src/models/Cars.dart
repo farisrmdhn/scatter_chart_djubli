@@ -8,7 +8,8 @@ final List<Car> cars = [
     transactionDate: "2015-01-01", 
     color: "Hitam", 
     mileage: "1000", 
-    location: "Surabaya"
+    location: "Surabaya",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit nec neque volutpat condimentum ut at enim. Phasellus sed porttitor elit. Duis tincidunt sem erat, non lacinia magna vehicula id.",
   ),
   Car(
     id: "MTINNO1501", 
@@ -17,7 +18,8 @@ final List<Car> cars = [
     transactionDate: "2015-01-31", 
     color: "Hitam", 
     mileage: "1000", 
-    location: "Surabaya"
+    location: "Surabaya",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit nec neque volutpat condimentum ut at enim. Phasellus sed porttitor elit. Duis tincidunt sem erat, non lacinia magna vehicula id.",
   ),
   Car(
     id: "MTINNO1502", 
@@ -26,7 +28,8 @@ final List<Car> cars = [
     transactionDate: "2016-11-30", 
     color: "Putih", 
     mileage: "10000", 
-    location: "DKI Jakarta"
+    location: "DKI Jakarta",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit nec neque volutpat condimentum ut at enim. Phasellus sed porttitor elit. Duis tincidunt sem erat, non lacinia magna vehicula id.",
   ),
   Car(
     id: "MTINNO1503", 
@@ -35,7 +38,8 @@ final List<Car> cars = [
     transactionDate: "2017-02-02", 
     color: "Silver", 
     mileage: "25000", 
-    location: "DKI Jakarta"
+    location: "DKI Jakarta",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit nec neque volutpat condimentum ut at enim. Phasellus sed porttitor elit. Duis tincidunt sem erat, non lacinia magna vehicula id.",
   ),
   Car(
     id: "MTINNO1504", 
@@ -44,7 +48,8 @@ final List<Car> cars = [
     transactionDate: "2017-04-20", 
     color: "Putih", 
     mileage: "26000", 
-    location: "Bandung"
+    location: "Bandung",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit nec neque volutpat condimentum ut at enim. Phasellus sed porttitor elit. Duis tincidunt sem erat, non lacinia magna vehicula id.",
   ),
   Car(
     id: "MTINNO1505", 
@@ -53,6 +58,7 @@ final List<Car> cars = [
     transactionDate: "2018-03-03", 
     color: "Abu-Abu", 
     mileage: "40000", 
-    location: "DKI Jakarta"
+    location: "DKI Jakarta",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit nec neque volutpat condimentum ut at enim. Phasellus sed porttitor elit. Duis tincidunt sem erat, non lacinia magna vehicula id.",
   ),
 ];
