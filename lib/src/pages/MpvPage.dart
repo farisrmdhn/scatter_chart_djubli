@@ -1,6 +1,9 @@
 // Packages
 import 'package:flutter/material.dart';
 
+// External Widgets
+import '../widgets/ScatteredChartWidget.dart';
+
 class MpvPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,7 @@ class MpvPage extends StatelessWidget {
           Text(
             'Toyota Innova 2.5V',
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 24,
               fontWeight: FontWeight.bold,
             )
           ),
@@ -23,6 +26,8 @@ class MpvPage extends StatelessWidget {
               fontSize: 16
             ),
           ),
+          SizedBox(height: 5),
+          ScatteredChartWidget(),
         ],
       ),
     );

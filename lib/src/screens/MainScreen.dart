@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Models
-import '../models/Car.dart';
+// import '../models/Car.dart';
 
 // Pages
 import '../pages/MpvPage.dart';
@@ -10,9 +10,6 @@ import '../pages/SedanPage.dart';
 import '../pages/SuvPage.dart';
 
 class MainScreen extends StatefulWidget {
-  final Car car;
-
-  MainScreen({this.car});
 
   @override
   _MainScreenState createState() => _MainScreenState();
@@ -211,16 +208,18 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   Widget _buildBody() {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          SizedBox(height: 10),
-          _buildSearchField(),
-          SizedBox(height: 10),
-          _buildTypeSelector(),
-          SizedBox(height: 5),
-          currentPage,
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        child: Column(
+          children: <Widget>[
+            SizedBox(height: 10),
+            _buildSearchField(),
+            SizedBox(height: 10),
+            _buildTypeSelector(),
+            SizedBox(height: 5),
+            currentPage,
+          ],
+        ),
       ),
     );
   }

@@ -1,7 +1,7 @@
 class Car {
   final String id;
   final String name;
-  final String price;
+  final int price;
   final String transactionDate;
   final String color;
   final String mileage;
